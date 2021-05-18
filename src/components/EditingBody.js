@@ -1,17 +1,34 @@
-import React, { Component } from 'react'
+import React, { Component } from 'react';
+import uniqID from 'uniqid';
+import ExperienceField from './ExperienceField';
+import ExperienceInput from './ExperienceInput.JS';
 
 export class EditingBody extends Component {
   constructor(props) {
       super(props)
   
-      this.state = {
-           firstName:'',
+      this.state = {     
+          experience : { 
+            id : uniqID(),
+            key : uniqID(),
+            inputHandler : this.experienceInputHandler,
+            delete : this.deleteEexperienceField,
+        },       
+          experienceArray:[],
+
+             
+/*         firstName:'',
            lastName:'',
            title:'',
            adress:'',
            phoneNumber:'',
            eMail:'',
            description:' testing this',
+           position:'', 
+           company:'',
+           city:'',
+           fromDate:'',
+           toDate:'', */
 
       }
   }
@@ -22,23 +39,51 @@ export class EditingBody extends Component {
       const name = target.name
     this.setState({
        [name] : value,
-    })
-    console.log(this.state)
+    },()=>{    console.log(this.state)})
+    
+/*     console.log(name,value,target) */
   }
+  experienceInputHandler = (e)=>{
+    const target = e.target;
+    const value = target.value;
+    const name = target.name;
+  this.setState({
+    experienceArray : this.state.experienceArray.map(experience => { 
+      if(experience.id===target.id){
+        experience[name] = value;
+        return experience
+      }
+      else { return experience }
+    }
+       ) 
+  },()=>{    console.log(this.state)})
+  
+/*     console.log(name,value,target) */
+}
 
 
-/*   experienceFields =
-                      <div>
-            <input name="position" type="text" placeholder="Position" onChange={this.inputHandler} value={position}/>
-            <input name="company" type="text" placeholder="Company" onChange={this.inputHandler} value={company}/>
-            <input name="city" type="text" placeholder="City" onChange={this.inputHandler} value={city}/>
-            <input name="fromDate" type="date"  onChange={this.inputHandler} value={fromDate}/>
-            <input name="toDate" type="date"  onChange={this.inputHandler} value={toDate}/>
-            </div>
- */
+   addExperienceField =()=>{
+        this.setState({
+            experience: {
+                id : uniqID(),
+                key : uniqID(),
+                inputHandler : this.experienceInputHandler,
+                delete : this.deleteEexperienceField,
+            },
+            experienceArray : this.state.experienceArray.concat(this.state.experience)
+        },()=>{console.log(this.state.experienceArray)})
+    }
+
+    deleteEexperienceField=(e)=>{
+      const targetID = e.target.id;
+      this.setState({
+        experienceArray : this.state.experienceArray.filter(experience=> experience.id===targetID)
+      })
+    }
+    
   
     render() {
-        const {firstName,lastName,title,adress,phoneNumber,eMail,description}=this.state
+        const {firstName,lastName,title,adress,phoneNumber,eMail,description,position,company,city,fromDate,toDate,experienceArray}=this.state
         return (
             <div>
                 <div className="personalInfo">
@@ -55,9 +100,8 @@ export class EditingBody extends Component {
                     </div>
 
                     <div>
-
-                        <button>add Experience</button>
-
+                        <button onClick={this.addExperienceField}>add Experience</button>
+                        <ExperienceField experienceArray={experienceArray}/>
                     </div>
 
 
