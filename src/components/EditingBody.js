@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import uniqID from 'uniqid';
+import Education from './Education';
 import ExperienceField from './ExperienceField'; 
 
 export class EditingBody extends Component {
@@ -11,23 +12,17 @@ export class EditingBody extends Component {
             id : uniqID(),
             key : uniqID(),
             inputHandler : this.experienceInputHandler,
-            delete : this.deleteEexperienceField,
+            delete : this.deleteExperienceField,
         },       
           experienceArray:[],
-
-             
-/*         firstName:'',
-           lastName:'',
-           title:'',
-           adress:'',
-           phoneNumber:'',
-           eMail:'',
-           description:' testing this',
-           position:'', 
-           company:'',
-           city:'',
-           fromDate:'',
-           toDate:'', */
+          
+          education : { 
+            id : uniqID(),
+            key : uniqID(),
+            inputHandler : this.educationInputHandler,
+            delete : this.deleteEducationField,
+        },     
+          educationArray:[],
 
       }
   }
@@ -60,6 +55,24 @@ export class EditingBody extends Component {
 /*     console.log(name,value,target) */
 }
 
+educationInputHandler = (e)=>{
+  const target = e.target;
+  const value = target.value;
+  const name = target.name;
+this.setState({
+  educationArray : this.state.educationArray.map(education => { 
+    if(education.id===target.id){
+      education[name] = value;
+      return education
+    }
+    else { return education }
+  }
+     ) 
+},()=>{    console.log(this.state)})
+
+/*     console.log(name,value,target) */
+}
+
 
    addExperienceField =()=>{
         this.setState({
@@ -67,13 +80,13 @@ export class EditingBody extends Component {
                 id : uniqID(),
                 key : uniqID(),
                 inputHandler : this.experienceInputHandler,
-                delete : this.deleteEexperienceField,
+                delete : this.deleteExperienceField,
             },
             experienceArray : this.state.experienceArray.concat(this.state.experience)
         },()=>{console.log(this.state.experienceArray)})
     }
 
-    deleteEexperienceField=(e)=>{
+    deleteExperienceField=(e)=>{
       e.preventDefault();
       const targetID = e.target.id;
       this.setState({
@@ -81,9 +94,35 @@ export class EditingBody extends Component {
       })
     }
     
+
+    addEducationField =()=>{
+      this.setState({
+          education: {
+              id : uniqID(),
+              key : uniqID(),
+              inputHandler : this.educationInputHandler,
+              delete : this.deleteEducationField,
+          },
+          educationArray : this.state.educationArray.concat(this.state.education)
+      },()=>{console.log(this.state.educationArray)})
+  }
+
+  deleteEducationField=(e)=>{
+    e.preventDefault();
+    const targetID = e.target.id;
+    this.setState({
+      educationArray : this.state.educationArray.filter(education=> education.id!==targetID)
+    })
+  }
+
+
+
+
+
+
   
     render() {
-        const {firstName,lastName,title,adress,phoneNumber,eMail,description,experienceArray}=this.state
+        const {firstName,lastName,title,adress,phoneNumber,eMail,description,experienceArray,educationArray}=this.state
         return (
             <div>
                 <div className="personalInfo">
@@ -102,8 +141,13 @@ export class EditingBody extends Component {
                     <div>
                         <button onClick={this.addExperienceField}>add Experience</button>
                         <ExperienceField experienceArray={experienceArray}/>
+                        
                     </div>
-
+                    <div>
+                        <button onClick={this.addEducationField}>add Education</button>
+                         <Education educationArray={educationArray}/> 
+                        
+                    </div>
 
             </div>
 
