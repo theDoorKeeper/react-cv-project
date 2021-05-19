@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import uniqID from 'uniqid';
-import ExperienceField from './ExperienceField';
-import ExperienceInput from './ExperienceInput.JS';
+import ExperienceField from './ExperienceField'; 
 
 export class EditingBody extends Component {
   constructor(props) {
@@ -75,19 +74,20 @@ export class EditingBody extends Component {
     }
 
     deleteEexperienceField=(e)=>{
+      e.preventDefault();
       const targetID = e.target.id;
       this.setState({
-        experienceArray : this.state.experienceArray.filter(experience=> experience.id===targetID)
+        experienceArray : this.state.experienceArray.filter(experience=> experience.id!==targetID)
       })
     }
     
   
     render() {
-        const {firstName,lastName,title,adress,phoneNumber,eMail,description,position,company,city,fromDate,toDate,experienceArray}=this.state
+        const {firstName,lastName,title,adress,phoneNumber,eMail,description,experienceArray}=this.state
         return (
             <div>
                 <div className="personalInfo">
-                <h4>personal Info</h4>
+                <h4>personal personalInfo</h4>
                 <form>
                 <input name="firstName" type="text" placeholder="First Name" onChange={this.inputHandler} value={firstName}/>
                 <input name="lastName" type="text" placeholder="Last Name" onChange={this.inputHandler}  value={lastName}/>

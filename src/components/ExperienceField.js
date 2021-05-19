@@ -1,6 +1,8 @@
+
 import React from 'react'
 
-function ExperienceField(props) {
+export default function ExperienceInput(props) {
+
     const {experienceArray}=props;
     const experienceList = experienceArray.map(experience=> 
         <form key={experience.key}>
@@ -8,16 +10,15 @@ function ExperienceField(props) {
         <input name="company" type="text" placeholder="Company" onChange={experience.inputHandler} value={experience.company} id={experience.id}/>
         <input name="city" type="text" placeholder="City" onChange={experience.inputHandler} value={experience.city} id={experience.id}/>
         <input name="fromDate" type="date"  onChange={experience.inputHandler} value={experience.fromDate} id={experience.id}/>
-        <input name="toDate" type="date"  onChange={experience.inputHandler} value={experience.toDate} />
+        <input name="toDate" type="date"  onChange={experience.inputHandler} value={experience.toDate} id={experience.id} />
+        <button id={experience.id} onClick={experience.delete}> Delete </button>
         </form> );
+
+
+
     return (
         <div>
-            {experienceList}
+        {experienceList}
         </div>
     )
 }
-
-
-
-export default ExperienceField
-
