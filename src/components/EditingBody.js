@@ -7,6 +7,7 @@ import React, { Component } from 'react';
 import uniqID from 'uniqid';
 import Education from './Education';
 import ExperienceField from './ExperienceField';
+import Preview from './Preview';
 
 export class EditingBody extends Component {
   constructor(props) {
@@ -170,7 +171,13 @@ educationInputHandler = (e) => {
         <div>
           <button onClick={this.reset}>RESET</button>
         </div>
-        <div />
+
+        <div/>
+
+        <div className="PreviewBody">
+          <Preview firstName={firstName} lastName={lastName} title={title} company={firstName}
+           adress={adress} phoneNumber={phoneNumber} eMail={eMail} description={description}                  />
+        </div>
       </div>
 
     );
