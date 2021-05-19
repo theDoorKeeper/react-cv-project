@@ -1,17 +1,17 @@
 {
   "files": {
-    "main.js": "/%7Breact-cv-project%7D/static/js/main.bc94405d.chunk.js",
-    "main.js.map": "/%7Breact-cv-project%7D/static/js/main.bc94405d.chunk.js.map",
+    "main.js": "/%7Breact-cv-project%7D/static/js/main.cdd08d8a.chunk.js",
+    "main.js.map": "/%7Breact-cv-project%7D/static/js/main.cdd08d8a.chunk.js.map",
     "runtime-main.js": "/%7Breact-cv-project%7D/static/js/runtime-main.74e7a862.js",
     "runtime-main.js.map": "/%7Breact-cv-project%7D/static/js/runtime-main.74e7a862.js.map",
-    "static/js/2.20762c00.chunk.js": "/%7Breact-cv-project%7D/static/js/2.20762c00.chunk.js",
-    "static/js/2.20762c00.chunk.js.map": "/%7Breact-cv-project%7D/static/js/2.20762c00.chunk.js.map",
+    "static/js/2.8ae01595.chunk.js": "/%7Breact-cv-project%7D/static/js/2.8ae01595.chunk.js",
+    "static/js/2.8ae01595.chunk.js.map": "/%7Breact-cv-project%7D/static/js/2.8ae01595.chunk.js.map",
     "index.html": "/%7Breact-cv-project%7D/index.html",
-    "static/js/2.20762c00.chunk.js.LICENSE.txt": "/%7Breact-cv-project%7D/static/js/2.20762c00.chunk.js.LICENSE.txt"
+    "static/js/2.8ae01595.chunk.js.LICENSE.txt": "/%7Breact-cv-project%7D/static/js/2.8ae01595.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.74e7a862.js",
-    "static/js/2.20762c00.chunk.js",
-    "static/js/main.bc94405d.chunk.js"
+    "static/js/2.8ae01595.chunk.js",
+    "static/js/main.cdd08d8a.chunk.js"
   ]
 }
