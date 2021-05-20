@@ -176,7 +176,7 @@ educationInputHandler = (e) => {
 
         <div className="PreviewBody">
           <Preview firstName={firstName} lastName={lastName} title={title} company={firstName}
-           adress={adress} phoneNumber={phoneNumber} eMail={eMail} description={description}                  />
+           adress={adress} phoneNumber={phoneNumber} eMail={eMail} description={description} experienceArray={experienceArray} educationArray={educationArray} />
         </div>
       </div>
 

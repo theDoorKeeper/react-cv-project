@@ -4,7 +4,7 @@ export default function Education(props) {
   const { educationArray } = props;
   const educationList = educationArray.map((education) => (
     <form key={education.key}>
-      <input name="University" type="text" placeholder="University" onChange={education.inputHandler} value={education.University} id={education.id} />
+      <input name="university" type="text" placeholder="University" onChange={education.inputHandler} value={education.University} id={education.id} />
       <input name="degree" type="text" placeholder="degree" onChange={education.inputHandler} value={education.degree} id={education.id} />
       <input name="city" type="text" placeholder="City" onChange={education.inputHandler} value={education.city} id={education.id} />
       <input name="subject" type="text" placeholder="Subject" onChange={education.inputHandler} value={education.city} id={education.id} />
