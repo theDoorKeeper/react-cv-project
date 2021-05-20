@@ -46,9 +46,10 @@ export class EditingBody extends Component {
     const { target } = e;
     const { value } = target;
     const { name } = target;
-
+    const additions = { [name] : value };
+    const newInfo = {...this.state.personalInfo,...additions}
     this.setState({
-      [name]: value,
+      personalInfo : newInfo
     }, () => { console.log(this.state); });
 
     /*     console.log(name,value,target) */
@@ -136,14 +137,17 @@ educationInputHandler = (e) => {
   }
 
   render() {
-    const {
-      firstName, lastName, title, adress, phoneNumber, eMail, description,
-      experienceArray, educationArray,
+    const { experienceArray, educationArray,personalInfo
     } = this.state;
+    const {firstName, lastName, title, adress, phoneNumber, eMail, description} = personalInfo;
     return (
-      <div>
+      <div className="main">
+
+        <div className="editing">
+
+
         <div className="personalInfo">
-          <h4>personal personalInfo</h4>
+          <h4>personal Info</h4>
           <form>
             <input name="firstName" type="text" placeholder="First Name" onChange={this.inputHandler} value={firstName} />
             <input name="lastName" type="text" placeholder="Last Name" onChange={this.inputHandler} value={lastName} />
@@ -172,11 +176,12 @@ educationInputHandler = (e) => {
           <button onClick={this.reset}>RESET</button>
         </div>
 
-        <div/>
 
-        <div className="PreviewBody">
-          <Preview firstName={firstName} lastName={lastName} title={title} company={firstName}
-           adress={adress} phoneNumber={phoneNumber} eMail={eMail} description={description} experienceArray={experienceArray} educationArray={educationArray} />
+        </div>
+      
+
+        <div className="preview">
+          <Preview personalInfo={personalInfo} experienceArray={experienceArray} educationArray={educationArray} />
         </div>
       </div>
 

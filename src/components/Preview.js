@@ -1,10 +1,8 @@
 import React from 'react';
-
 function Preview(props) {
-  const {
-    firstName, lastName, title, adress, phoneNumber, eMail, description,
-    experienceArray, educationArray,
-  } = props;
+  const {personalInfo,experienceArray, educationArray, } = props;
+
+  const {firstName, lastName, title, adress, phoneNumber, eMail, description} = personalInfo;
 
   const experiencePreview = experienceArray.map((experience) => (
     <ul>
@@ -57,17 +55,20 @@ function Preview(props) {
   ));
 
   return (
-    <div>
-      <header>
-        <h1>
-          {firstName}
+    <div className="previewContainer">
+      <header className="previewHeader">
+        <div className='mainInfo'> 
+         {firstName}
           {' '}
           {lastName}
-        </h1>
-        <h4>{title}</h4>
+        </div>
+        <div className='secondaryInfo'>
+        {title}
+        </div>
+
       </header>
 
-      <div className="sideBar">
+      <div className="previewSideBar">
         <h4>Personal Details</h4>
         <ul>
           <li>
@@ -85,11 +86,14 @@ function Preview(props) {
           </li>
         </ul>
       </div>
-      <div className="mainPreview">
+
+
+      <div className="previewMain">
+
         <ul className="previewList">
           <li className="previewListItem">
             Description :
-            <p>{description}</p>
+            <br/>{description}
           </li>
           <li className="previewListItem">
             Education :
@@ -99,7 +103,6 @@ function Preview(props) {
             Experience :
             {experiencePreview}
           </li>
-
         </ul>
 
       </div>

@@ -1,0 +1,70 @@
+.title{
+    height: 5rem;
+    border:  black solid 1px;
+    border-left: none;
+    border-right: none;
+}
+
+.main{
+    margin-top: 3rem;
+    margin-left: 2rem;
+    margin-right: 2rem;
+    min-height: min-content;
+    display: flex;
+    justify-content: space-between;
+}
+
+.editing{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: black 1px solid;
+    background-color: whitesmoke;
+    width: 40%;
+}
+
+ .personalInfo  input{
+  border: 1px solid black;
+  height: 2rem;
+  width: 80%;
+  font-size: x-large;
+  text-align: center;
+} 
+.preview{
+    border: black 1px solid;
+    background-color: wheat;
+    width: 40%;
+}
+
+
+.previewContainer {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
+    gap: 0px 0px;
+    grid-template-areas:
+      "previewHeader previewHeader previewHeader previewHeader previewHeader previewHeader"
+      "previewMain previewMain previewMain previewMain previewSideBar previewSideBar"
+      "previewMain previewMain previewMain previewMain previewSideBar previewSideBar"
+      "previewMain previewMain previewMain previewMain previewSideBar previewSideBar"
+      "previewMain previewMain previewMain previewMain previewSideBar previewSideBar";
+  }
+  .previewHeader {
+       grid-area: previewHeader; 
+       height: 6rem;
+       background-color: blue;
+    }
+  .previewSideBar { grid-area: previewSideBar; }
+  .previewMain { grid-area: previewMain; }
+
+
+
+  .mainInfo{
+    font-size: 30px;
+    font-weight: bold;
+  }
+  .secondaryInfo{
+    margin-top: 12px;
+    font-size: 26px;
+    font-weight: 500;
+  }
