@@ -3,7 +3,7 @@ import React from 'react';
 export default function Education(props) {
   const { educationArray } = props;
   const educationList = educationArray.map((education) => (
-    <form key={education.key}>
+    <form className="educationForm" key={education.key}>
       <input name="university" type="text" placeholder="University" onChange={education.inputHandler} value={education.University} id={education.id} />
       <input name="degree" type="text" placeholder="degree" onChange={education.inputHandler} value={education.degree} id={education.id} />
       <input name="city" type="text" placeholder="City" onChange={education.inputHandler} value={education.city} id={education.id} />
@@ -13,9 +13,13 @@ export default function Education(props) {
       <button id={education.id} onClick={education.delete}> Delete </button>
     </form>
   ));
-
   return (
+   
     <div>
+      {educationArray.length >=1
+           ? (<div style={{fontSize:'x-large',fontWeight:'bold' }}>Education : </div>)
+           : null
+          }
       {educationList}
     </div>
   );

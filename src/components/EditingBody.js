@@ -131,6 +131,15 @@ educationInputHandler = (e) => {
 
   reset=() => {
     this.setState({
+      personalInfo: {
+        firstName: '',
+        lastName: '',
+        title: '',
+        adress: '',
+        phoneNumber: '',
+        eMail: '',
+        description: '',
+      },
       experienceArray: [],
       educationArray: [],
     });
@@ -147,15 +156,16 @@ educationInputHandler = (e) => {
 
 
         <div className="personalInfo">
-          <h4>personal Info</h4>
-          <form>
+         
+          <form className="personalForm">
+            <div style={{fontSize:'x-large',fontWeight:'bold' }}>Personal info : </div>
             <input name="firstName" type="text" placeholder="First Name" onChange={this.inputHandler} value={firstName} />
             <input name="lastName" type="text" placeholder="Last Name" onChange={this.inputHandler} value={lastName} />
             <input name="title" type="text" placeholder="Title" onChange={this.inputHandler} value={title} />
             <input name="adress" type="text" placeholder="Adress" onChange={this.inputHandler} value={adress} />
             <input name="phoneNumber" type="text" placeholder="Phone Number" onChange={this.inputHandler} value={phoneNumber} />
             <input name="eMail" type="text" placeholder="E-mail" onChange={this.inputHandler} value={eMail} />
-            <textarea name="description" placeholder="Description..." onChange={this.inputHandler} value={description} />
+            <input name="description" type="text" placeholder="Description..." onChange={this.inputHandler} value={description} />
           </form>
         </div>
 
@@ -173,7 +183,7 @@ educationInputHandler = (e) => {
         </div>
 
         <div>
-          <button onClick={this.reset}>RESET</button>
+          <button className="reset" onClick={this.reset}>RESET</button>
         </div>
 
 

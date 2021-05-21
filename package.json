@@ -27,7 +27,7 @@
       "react-app/jest"
     ]
   },
-  "homepage": "http://{Harremking0}.github.io/{react-cv-project}",
+  "homepage": "http://Harremking0.github.io/react-cv-project",
   "browserslist": {
     "production": [
       ">0.2%",

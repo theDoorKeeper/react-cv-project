@@ -15,6 +15,10 @@ export default function ExperienceInput(props) {
 
   return (
     <div>
+            {experienceArray.length >=1
+           ? (<div style={{fontSize:'x-large',fontWeight:'bold' }}>Experience : </div>)
+           : null
+          }
       {experienceList}
     </div>
   );
