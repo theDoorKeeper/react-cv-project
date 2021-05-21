@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/react-cv-project/static/css/main.eab2cadc.chunk.css",
-    "main.js": "/react-cv-project/static/js/main.297d30c2.chunk.js",
-    "main.js.map": "/react-cv-project/static/js/main.297d30c2.chunk.js.map",
+    "main.js": "/react-cv-project/static/js/main.f9892214.chunk.js",
+    "main.js.map": "/react-cv-project/static/js/main.f9892214.chunk.js.map",
     "runtime-main.js": "/react-cv-project/static/js/runtime-main.2e84ea32.js",
     "runtime-main.js.map": "/react-cv-project/static/js/runtime-main.2e84ea32.js.map",
     "static/js/2.6f943e1b.chunk.js": "/react-cv-project/static/js/2.6f943e1b.chunk.js",
@@ -15,6 +15,6 @@
     "static/js/runtime-main.2e84ea32.js",
     "static/js/2.6f943e1b.chunk.js",
     "static/css/main.eab2cadc.chunk.css",
-    "static/js/main.297d30c2.chunk.js"
+    "static/js/main.f9892214.chunk.js"
   ]
 }
