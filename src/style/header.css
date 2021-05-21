@@ -1,18 +1,29 @@
+@import url('https://fonts.googleapis.com/css2?family=Jost&display=swap');
+
 body{
   background-color: #cccccc;
   margin: 0;
   padding: 0;
+  font-family: 'Jost', sans-serif;
 }
 
-.title{
+.header{
     display: flex;
+    flex-direction: row;
+    gap: 1rem;
+    justify-content: center;
     height: 5rem;
     border:  black solid 1px;
     border-left: none;
     border-right: none;
-    font-size: x-large;
     color: whitesmoke;
     background-color: #333333;
+}
+.title{
+  font-size: 4rem;
+}
+.fa-address-card{
+  font-size: 4rem;
 }
 button{
   text-align: center;
@@ -59,12 +70,23 @@ button:hover{
   background-color: rgb(162, 16, 13);
 }
  input{
-  border: 1px solid black;
+  border: none;
+  border-radius: 5px;
   height: 2rem;
   font-size: x-large;
   text-align: center;
   width: 40rem;
 } 
+textarea{
+  border: none;
+  border-radius: 5px;
+  height: 2rem;
+  width: 40rem;
+  height: 6rem;
+  font-size: medium;
+  text-align:start;
+  resize: none;
+}
 Form{
   display: flex;
   flex-direction: column;
@@ -79,6 +101,11 @@ Form{
     width: 40%;
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 
+}
+ul{
+  list-style-type: none;
+  font-size: medium;
+  font-weight: bold;
 }
 
 
