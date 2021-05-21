@@ -15,6 +15,10 @@ function Preview(props) {
         {experience.company}
       </li>
       <li>
+        city :
+        {experience.city}
+      </li>
+      <li>
         from :
         {experience.fromDate}
       </li>

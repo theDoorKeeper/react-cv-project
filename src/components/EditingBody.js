@@ -165,7 +165,7 @@ educationInputHandler = (e) => {
             <input name="adress" type="text" placeholder="Adress" onChange={this.inputHandler} value={adress} />
             <input name="phoneNumber" type="text" placeholder="Phone Number" onChange={this.inputHandler} value={phoneNumber} />
             <input name="eMail" type="text" placeholder="E-mail" onChange={this.inputHandler} value={eMail} />
-            <textarea id="description" name="description" type="text" placeholder="Description..." onChange={this.inputHandler} value={description} />
+            <input id="description"name="description" type="text" placeholder="Description..." onChange={this.inputHandler} value={description} />
           </form>
         </div>
 
