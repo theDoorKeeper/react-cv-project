@@ -1,15 +1,8 @@
-/* eslint-disable react/button-has-type */
-/* eslint-disable react/no-access-state-in-setstate */
-/* eslint-disable react/destructuring-assignment */
-/* eslint-disable no-param-reassign */
 /* eslint-disable react/jsx-filename-extension */
 import React, { useState } from 'react';
 import uniqID from 'uniqid';
-import Education from './Education';
-import ExperienceField from './ExperienceField';
-import Preview from './Preview';
 
-const  EditingBody = () => {
+const EditingBodyHook = () => {
   const [personalInfo, setPersonalInfo] = useState({
     firstName: '',
     lastName: '',
@@ -22,45 +15,24 @@ const  EditingBody = () => {
 
   const [experienceArray, setExperienceArray] = useState([]);
   const [educationArray, setEducationArray] = useState([]);
- 
-  const experienceInputHandler = (e) => {
-    const { target } = e;
-    const { value } = target;
-    const { name } = target;
-    const { id } = target.parentNode; 
-    console.log(id)
-    console.log(experienceArray) 
-   setExperienceArray(previousArray=>
-     previousArray.map(experience=>
-      experience.id === id  ? {...experience, [name] : value} 
-      : experience 
-     )
-      )
- 
-  }; 
-  
-  const deleteExperienceField = (e) => {
-    e.preventDefault();
-    const targetID = e.target.parentNode.id;
-    setExperienceArray(previousArray=> previousArray.filter((experience) => experience.id !== targetID));
-  };
 
- const addExperienceField = () => {
-    const newExperience = experience()
-    const newArray = experienceArray.concat(newExperience)
-    setExperienceArray(newArray);
-    
-  };
-
-   const experience =()=> {
-    const key = uniqID();
+  const experience = () => {
     const id = uniqID();
-    const input = experienceInputHandler;
+    const key = uniqID();
+    const inputHandler = experienceInputHandler;
     const remove = deleteExperienceField;
-    return {key,id,input,remove}
-  }
+    return {
+      id, key, inputHandler, remove,
+    };
+  };
 
-
+  const education = () => {
+    const id = uniqID();
+    const key = uniqID();
+    const inputHandler = experienceInputHandler;
+    const remove = deleteExperienceField;
+    return { id, key, inputHandler };
+  };
 
   const inputHandler = (e) => {
     const { target } = e;
@@ -71,7 +43,12 @@ const  EditingBody = () => {
     setPersonalInfo(newInfo);
   };
 
- 
+  const addExperienceField = () => {
+    const newExperience = experience();
+    setExperienceArray(
+      experienceArray.concat(newExperience),
+    );
+  };
 
   const addEducationField = () => {
     const newEducation = education();
@@ -80,36 +57,47 @@ const  EditingBody = () => {
     );
   };
 
-
-  const education = () => {
-    const id = uniqID();
-    const key = uniqID();
-    const input = educationInputHandler;
-    const remove = deleteEducationField;
-    return { id, key, input,remove };
-  };
-
-
-  const deleteEducationField = (e) => {
+  const deleteExperienceField = (e) => {
     e.preventDefault();
-    const targetID = e.target.parentNode.id;
+    const targetID = e.target.id;
 
-    setEducationArray( previousArray=>
-      previousArray.filter((education) => education.id !== targetID),
+    setExperienceArray(
+      experienceArray.filter((experience) => experience.id !== targetID),
     );
   };
 
+  const deleteEducationField = (e) => {
+    e.preventDefault();
+    const targetID = e.target.id;
 
+    setExperienceArray(
+      educationArray.filter((education) => education.id !== targetID),
+    );
+  };
+
+  const experienceInputHandler = (e) => {
+    const { target } = e;
+    const { value } = target;
+    const { name } = target;
+
+    setExperienceArray(
+      experienceArray.map((experience) => {
+        if (experience.id === target.id) {
+          experience[name] = value;
+          return experience;
+        } return experience;
+      }),
+    );
+  };
 
   const educationInputHandler = (e) => {
     const { target } = e;
     const { value } = target;
     const { name } = target;
-    const { id } = target.parentNode
-    
-    setEducationArray( previousArray=>
-      previousArray.map((education) => {
-        if (education.id === id) {
+
+    setExperienceArray(
+      educationArray.map((education) => {
+        if (education.id === target.id) {
           education[name] = value;
           return education;
         } return education;
@@ -148,7 +136,7 @@ const  EditingBody = () => {
         </div>
         <div>
 
-          <button onClick={addEducationField}>add Education</button>
+          <button onClick={this.addEducationField}>add Education</button>
           <Education educationArray={educationArray} />
 
         </div>
@@ -169,5 +157,3 @@ const  EditingBody = () => {
     </div>
   );
 };
-export default EditingBody 
-
