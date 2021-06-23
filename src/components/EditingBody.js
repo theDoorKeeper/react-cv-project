@@ -18,6 +18,7 @@ const  EditingBody = () => {
     phoneNumber: '',
     eMail: '',
     description: '',
+    photo:'',
   });
 
   const [experienceArray, setExperienceArray] = useState([]);
@@ -127,7 +128,7 @@ const  EditingBody = () => {
   }
 
   const {
-    firstName, lastName, title, adress, phoneNumber, eMail, description,
+    firstName, lastName, title, adress, phoneNumber, eMail, description, photo,
   } = personalInfo;
 
   return (
@@ -142,6 +143,7 @@ const  EditingBody = () => {
             <input name="firstName" type="text" placeholder="First Name" onChange={inputHandler} value={firstName} />
             <input name="lastName" type="text" placeholder="Last Name" onChange={inputHandler} value={lastName} />
             <input name="title" type="text" placeholder="Title" onChange={inputHandler} value={title} />
+            <input name="photo" type="file" onChange={inputHandler} value={photo} placeholder="photo" accept="gif,.jpg,.jpeg,.png,.doc,.docx"/>
             <input name="adress" type="text" placeholder="Adress" onChange={inputHandler} value={adress} />
             <input name="phoneNumber" type="text" placeholder="Phone Number" onChange={inputHandler} value={phoneNumber} />
             <input name="eMail" type="text" placeholder="E-mail" onChange={inputHandler} value={eMail} />
