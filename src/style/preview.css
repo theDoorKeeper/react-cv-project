@@ -61,13 +61,25 @@ ul{
     display: flex;
     flex-direction: column;
     gap: 1rem;
-    text-decoration: underline rgb(175, 175, 175);
-    max-width: 55%;
+    margin-bottom: 1.5rem;
+    border-bottom: 1px lightgray solid;
+    max-height: 110px;
+    flex-wrap: wrap;
   }
   .education-list{
     display: flex;
     flex-direction: column;
     gap: 1rem;
-    text-decoration: underline rgb(175, 175, 175);
-    max-width: 55%;
+    margin-bottom: 1.5rem;
+    border-bottom: 1px lightgray solid;
+    max-height: 110px;
+    flex-wrap: wrap;
   }
+.preview-list-title{
+    font-size: x-large;
+    border-bottom: lightgray 2px solid;
+}
+
+.experience-list>* .education-list>*{
+    text-decoration: underline rgb(175, 175, 175);
+}
