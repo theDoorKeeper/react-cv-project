@@ -17,7 +17,6 @@ ul{
     min-width: 100%;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
-    grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
     gap: 0px 0px;
     grid-template-areas:
       "previewHeader previewHeader previewHeader previewHeader previewHeader previewHeader"
@@ -59,18 +58,16 @@ ul{
   }
 
   .experience-list{    
-    padding: 15px;
     display: flex;
     flex-direction: column;
     gap: 1rem;
     text-decoration: underline rgb(175, 175, 175);
-    max-width: 40%;
+    max-width: 55%;
   }
   .education-list{
-    padding: 15px;
     display: flex;
     flex-direction: column;
     gap: 1rem;
     text-decoration: underline rgb(175, 175, 175);
-    max-width: 40%;
+    max-width: 55%;
   }

@@ -98,15 +98,15 @@ function Preview(props) {
 
         <ul className="previewList">
           <li className="previewListItem">
-            Description :
+            <h4 className="preview-list-title">Description :</h4>
             <br/>{description}
           </li>
           <li className="previewListItem">
-            Education :
+          <h4 className="preview-list-title">Education :</h4> 
             {educationPreview}
           </li>
           <li className="previewListItem">
-            Experience :
+           <h4 className="preview-list-title"> Experience :</h4>
             {experiencePreview}
           </li>
         </ul>
