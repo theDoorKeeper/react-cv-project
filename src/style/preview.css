@@ -16,6 +16,7 @@ ul{
 .previewContainer {
     min-width: 100%;
     min-height: 100%;
+    max-height: 50vw;
     display: grid;
     gap: 0px 0px;
     

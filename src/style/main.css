@@ -19,7 +19,6 @@ button{
       margin-top: 3rem;
       margin-left: 2rem;
       margin-right: 2rem;
-      min-height: min-content;
       display: flex;
       justify-content: space-between;
       flex-wrap: wrap;
