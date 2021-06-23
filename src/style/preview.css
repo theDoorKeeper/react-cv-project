@@ -26,6 +26,7 @@ ul{
       "previewMain previewMain previewMain previewMain previewSideBar previewSideBar";
   }
   .previewHeader {
+      min-width: 100%;
        padding: 1rem;
        grid-area: previewHeader; 
        height: 6rem;
@@ -55,4 +56,3 @@ ul{
       flex-wrap: wrap;
       gap: 2rem;
   }
-  
