@@ -55,5 +55,22 @@ ul{
       display: flex;
       flex-direction: column;
       flex-wrap: wrap;
-      gap: 2rem;
+      gap: 1rem;
+  }
+
+  .experience-list{    
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    text-decoration: underline rgb(175, 175, 175);
+    max-width: 40%;
+  }
+  .education-list{
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    text-decoration: underline rgb(175, 175, 175);
+    max-width: 40%;
   }
