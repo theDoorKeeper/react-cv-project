@@ -117,6 +117,15 @@ const  EditingBody = () => {
     );
   };
 
+  const reset = ()=>{
+    setEducationArray([]);
+    setExperienceArray([]);
+    setPersonalInfo([]);
+    document.querySelectorAll('input').forEach(input=>{
+      input.value='';
+    })
+  }
+
   const {
     firstName, lastName, title, adress, phoneNumber, eMail, description,
   } = personalInfo;
@@ -155,7 +164,7 @@ const  EditingBody = () => {
         </div>
         
         <div>
-          {/*  <button className="reset" onClick={reset}>RESET</button> */}
+          <button className="reset" onClick={reset}>RESET</button>
         </div>
 
       </div>
