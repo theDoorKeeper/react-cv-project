@@ -7,7 +7,7 @@ function Preview(props) {
   const {firstName, lastName, title, adress, phoneNumber, eMail, description} = personalInfo;
 
   const experiencePreview = experienceArray.map((experience) => (
-    <ul className="experience-list">
+    <ul className="preview-secondary-list">
       <li>
         Position :
         {experience.position}
@@ -32,7 +32,7 @@ function Preview(props) {
   ));
 
   const educationPreview = educationArray.map((education) => (
-    <ul className="education-list">
+    <ul className="preview-secondary-list">
       <li>
         University :
         {education.university}
@@ -75,8 +75,8 @@ function Preview(props) {
       </header>
 
       <div className="previewSideBar">
-        <h4>Personal Details</h4>
-        <ul>
+        <h4 className="preview-list-title">Personal Details</h4>
+        <ul className="preview-description-list">
           <li>
             {' '}
             Adress :
