@@ -8,7 +8,7 @@ import uniqID from 'uniqid';
 import Education from './Education';
 import ExperienceField from './ExperienceField';
 import Preview from './Preview';
-
+import '../style/main.css';
 const  EditingBody = () => {
   const [personalInfo, setPersonalInfo] = useState({
     firstName: '',
