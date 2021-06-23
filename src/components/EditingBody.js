@@ -142,17 +142,18 @@ const  EditingBody = () => {
 
         <div>
 
-          <button onClick={addExperienceField}>add Experience</button>
-          <ExperienceField experienceArray={experienceArray} />
-
-        </div>
-        <div>
-
           <button onClick={addEducationField}>add Education</button>
           <Education educationArray={educationArray} />
 
         </div>
 
+        <div>
+
+          <button onClick={addExperienceField}>add Experience</button>
+          <ExperienceField experienceArray={experienceArray} />
+
+        </div>
+        
         <div>
           {/*  <button className="reset" onClick={reset}>RESET</button> */}
         </div>
