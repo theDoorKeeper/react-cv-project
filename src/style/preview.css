@@ -1,0 +1,52 @@
+.preview{
+    background-color:#eeeeee;
+    border: none;
+    border-radius: 5px;
+    width: 40%;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+
+}
+ul{
+  list-style-type: none;
+  font-size: medium;
+  font-weight: bold;
+}
+
+
+.previewContainer {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
+    gap: 0px 0px;
+    grid-template-areas:
+      "previewHeader previewHeader previewHeader previewHeader previewHeader previewHeader"
+      "previewMain previewMain previewMain previewMain previewSideBar previewSideBar"
+      "previewMain previewMain previewMain previewMain previewSideBar previewSideBar"
+      "previewMain previewMain previewMain previewMain previewSideBar previewSideBar"
+      "previewMain previewMain previewMain previewMain previewSideBar previewSideBar";
+  }
+  .previewHeader {
+       padding: 1rem;
+       grid-area: previewHeader; 
+       height: 6rem;
+       color: whitesmoke;
+       background-color: #143e72;
+    }
+  .previewSideBar { grid-area: previewSideBar; }
+  .previewMain {
+     grid-area: previewMain; 
+/*      display: flex;
+     flex-direction: column; */
+    }
+
+
+
+  .mainInfo{
+    font-size: 30px;
+    font-weight: bold;
+  }
+  .secondaryInfo{
+    margin-top: 12px;
+    font-size: 26px;
+    font-weight: 500;
+  }

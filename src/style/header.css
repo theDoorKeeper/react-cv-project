@@ -29,7 +29,7 @@ button{
   text-align: center;
   border: none;
   height: 2.3rem;
-  width: 43rem;
+  width: 35vw;
   color: whitesmoke;
   padding: 0.2rem;
   border-radius: 5px;
@@ -49,6 +49,7 @@ button:hover{
     min-height: min-content;
     display: flex;
     justify-content: space-between;
+    flex-wrap: wrap;
 }
 
 .editing{
@@ -75,13 +76,13 @@ button:hover{
   height: 2rem;
   font-size: x-large;
   text-align: center;
-  width: 40rem;
+  width: 35vw
 } 
 textarea{
   border: none;
   border-radius: 5px;
   height: 2rem;
-  width: 40rem;
+  width: 35vw;
   height: 6rem;
   font-size: medium;
   text-align:start;
@@ -129,7 +130,11 @@ ul{
        background-color: #143e72;
     }
   .previewSideBar { grid-area: previewSideBar; }
-  .previewMain { grid-area: previewMain; }
+  .previewMain {
+     grid-area: previewMain; 
+/*      display: flex;
+     flex-direction: column; */
+    }
 
 
 

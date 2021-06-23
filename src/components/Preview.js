@@ -1,4 +1,6 @@
 import React from 'react';
+import '../style/preview.css';
+
 function Preview(props) {
   const {personalInfo,experienceArray, educationArray, } = props;
 
