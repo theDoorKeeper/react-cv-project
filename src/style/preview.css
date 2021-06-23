@@ -34,12 +34,11 @@ ul{
     }
   .previewSideBar { grid-area: previewSideBar; }
   .previewMain {
-     grid-area: previewMain; 
-/*      display: flex;
-     flex-direction: column; */
+      max-width: 90%;
+     grid-area: previewMain;
+    word-break: break-all;
+ 
     }
-
-
 
   .mainInfo{
     font-size: 30px;
@@ -50,3 +49,10 @@ ul{
     font-size: 26px;
     font-weight: 500;
   }
+  .previewList{
+      display: flex;
+      flex-direction: column;
+      flex-wrap: wrap;
+      gap: 2rem;
+  }
+  
