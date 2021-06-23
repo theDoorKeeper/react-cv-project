@@ -40,8 +40,7 @@ ul{
     }
   .previewSideBar {
        grid-area: previewSideBar;
-       background-color: rgba(128, 128, 128, 0.575);
-       border-radius: 8px;
+       background-color: #dddddd;
        max-width: 100%;
      }
   .previewMain {
