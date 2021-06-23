@@ -145,7 +145,7 @@ const  EditingBody = () => {
             <input name="adress" type="text" placeholder="Adress" onChange={inputHandler} value={adress} />
             <input name="phoneNumber" type="text" placeholder="Phone Number" onChange={inputHandler} value={phoneNumber} />
             <input name="eMail" type="text" placeholder="E-mail" onChange={inputHandler} value={eMail} />
-            <input id="description" name="description" type="text" placeholder="Description..." onChange={inputHandler} value={description} />
+            <textarea id="description" name="description" type="text" placeholder="Description..." onChange={inputHandler} value={description} />
           </form>
         </div>
 

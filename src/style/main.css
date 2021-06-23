@@ -50,10 +50,13 @@ button{
     text-align: center;
     width: 35vw
   } 
+  input:focus{
+      outline: black 1px solid;
+  }
   textarea{
     border: none;
     border-radius: 5px;
-    height: 2rem;
+    height: 5rem;
     width: 35vw;
     height: 6rem;
     font-size: medium;
